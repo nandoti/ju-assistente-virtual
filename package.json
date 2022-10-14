@@ -1,6 +1,6 @@
 {
-  "name": "br.com.ju.assistente",
-  "displayName": "Ju Assistente",
+  "name": "br.com.oh.ju.assistente",
+  "displayName": "Oh Ju",
   "version": "1.0.0",
   "description": "A sample Apache Cordova application that responds to the deviceready event.",
   "main": "index.js",
@@ -27,6 +27,8 @@
     }
   },
   "dependencies": {
-    "framework7": "^7.0.7"
+    "cordova": "^11.0.0",
+    "framework7": "^7.0.8",
+    "framework7-cli": "^7.0.0"
   }
 }

@@ -5,12 +5,12 @@ var app = new Framework7({
   // App Name
   name: 'Ju Assistente',
   // App id
-  id: 'br.com.Ju.assistente',
+  id: 'br.com.oh.ju.assistente',
   // Enable swipe panel
   panel: {
     swipe: true,
   },
-  // Add default routes
+  // Add routes
   routes: [
     {
       path: '/index/',
@@ -31,7 +31,7 @@ var app = new Framework7({
       }
     },
   ],
-  // ... other parameters
+
 });
 
 function onDeviceReady() {

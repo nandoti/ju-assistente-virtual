@@ -8,7 +8,7 @@
         content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <!-- Color theme for statusbar (Android only) -->
-    <meta name="theme-color" content="#2196f3">
+    <meta name="theme-color" content="#00b7ff">
     <!-- Your app title -->
     <title>Ju Assistente</title>
     <!-- Path to Framework7 Library Bundle CSS -->
@@ -31,14 +31,13 @@
                 <div class="navbar">
                     <div class="navbar-bg bg-black"></div>
                     <div class="navbar-inner justify-content-center">
-                        <div class="title txt-primary">Ju Assistente</div>
+                        <div class="title txt-primary">Oh Ju!</div>
                     </div>
                 </div>
                 <!-- FAB BUTTON-->
                 <div class="fab fab-extended fab-center-bottom">
                     <a id="BtnFalar" href="#" class="btn-primary-outline">
                         <i class="mdi mdi-microphone"></i>
-                        <div class="fab-text">Falar</div>
                     </a>
                 </div>
 
@@ -53,7 +52,6 @@
                     <div class="block">
                         <p id="resposta"></p>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -62,12 +60,27 @@
     <script type="text/javascript" src="js/lib/framework7-bundle.js"></script>
     <!-- Typed JS-->
     <script type="text/javascript" src="js/lib/typed.js"></script>
-    <!-- jQuery 3.6.0-->
-    <script type="text/javascript" src="js/lib/jquery-3.6.0.min.js"></script>
+    <!--jQuery 3.6.1 -->
+    <script type="text/javascript" src="js/lib/jquery-3.6.1.min.js"></script>
     <!-- Path to your app js-->
     <script type="text/javascript" src="js/router.js"></script>
-    <!-- CORDOVA-->
+    <!-- CORDOVA JS -->
     <script type="text/javascript" src="cordova.js"></script>
+    <script>
+        var typed = new Typed('#resposta', {
+            strings: ['No que posso te ajudar? ^1000', ''],
+            typeSpeed: 40,
+            showCursor: false,
+            onComplete: function (self) {
+                toastBottom = app.toast.create({
+                    text: 'Fala concluída!',
+                    closeTimeout: 2000,
+                });
+                toastBottom.open();
+            }
+
+        });
+    </script>
 </body>
 
 </html>

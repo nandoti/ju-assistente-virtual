@@ -65,9 +65,6 @@ $("#BtnFalar").on('click', function () {
                         app.dialog.alert('Houve um erro: ' + erro);
                     });
                 }
-
-
-
             })
         },
         //SE DER ERRO

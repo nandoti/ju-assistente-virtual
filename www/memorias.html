@@ -8,7 +8,7 @@
         content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <!-- Color theme for statusbar (Android only) -->
-    <meta name="theme-color" content="#2196f3">
+    <meta name="theme-color" content="#00b7ff">
     <!-- Your app title -->
     <title>Ju Assistente</title>
     <!-- Path to Framework7 Library Bundle CSS -->
@@ -33,8 +33,7 @@
                     <div class="navbar-inner">
                         <a href="#" class="back left padding-left txt-primary"><i class="mdi mdi-arrow-left"></i> </a>
                         <div class="title txt-primary"><i class="mdi mdi-brain"></i> Memórias</div>
-                        <a href="#" id="apagarMemorias" class="right padding-right txt-primary"><i
-                                class="mdi mdi-database"></i></a>
+                        <div class="right padding-right txt-primary"><i class="mdi mdi-database"></i></div>
                     </div>
                 </div>
                 <!-- SEARCHBAR-->
@@ -46,13 +45,12 @@
                             <i class="searchbar-icon"></i>
                             <span class="input-clear-button"></span>
                         </div>
-                        <span class="searchbar-disable-button">Cancel</span>
+                        <span class="searchbar-disable-button">Cancelar</span>
                     </div>
                 </form>
                 <!-- FAB BUTTON-->
                 <div class="fab fab-extended fab-center-bottom">
                     <a href="#" data-popup=".popup-pergunta" class="btn-primary-outline popup-open">
-                        <i class="mdi mdi-plus"></i>
                         <div class="fab-text">Adicionar</div>
                     </a>
                 </div>
@@ -78,8 +76,7 @@
                                                 <div class="item-title item-label txt-primary fw-bold">Titulo da
                                                     pergunta</div>
                                                 <div class="item-input-wrap">
-                                                    <input id="perguntaEscrita"
-                                                        class="input-custom border-bottom-primary" type="text" />
+                                                    <input id="perguntaEscrita" class="input-custom border-bottom-primary" type="text" />
                                                     <span class="input-clear-button"></span>
                                                 </div>
                                             </div>
@@ -89,8 +86,7 @@
                                                 <div class="item-title item-label txt-primary fw-bold">O que a
                                                     assistente entendeu</div>
                                                 <div class="item-input-wrap">
-                                                    <input id="perguntaEntendida"
-                                                        class="input-custom border-bottom-primary" type="text" />
+                                                    <input id="perguntaEntendida" class="input-custom border-bottom-primary" type="text" />
                                                     <span class="input-clear-button"></span>
                                                 </div>
                                             </div>
@@ -101,7 +97,6 @@
                                 <!-- FAB BUTTON LEFT-->
                                 <div class="fab fab-extended fab-left-bottom">
                                     <a href="#" id="salvarPergunta" class="btn-success-outline">
-                                        <i class="mdi mdi-content-save"></i>
                                         <div class="fab-text"> Salvar</div>
                                     </a>
                                 </div>
@@ -117,7 +112,6 @@
                                 <!-- FAB BUTTON RIGHT-->
                                 <div class="fab fab-extended fab-right-bottom">
                                     <a href="#" class="btn-danger-outline popup-close">
-                                        <i class="mdi mdi-cancel"></i>
                                         <div class="fab-text"> Cancelar</div>
                                     </a>
                                 </div>
@@ -169,7 +163,6 @@
                                 <!-- FAB BUTTON LEFT-->
                                 <div class="fab fab-extended fab-left-bottom">
                                     <a href="#" class="btn-warning-outline">
-                                        <i class="mdi mdi-content-save"></i>
                                         <div class="fab-text"> Salvar</div>
                                     </a>
                                 </div>
@@ -185,7 +178,6 @@
                                 <!-- FAB BUTTON RIGHT-->
                                 <div class="fab fab-extended fab-right-bottom">
                                     <a href="#" class="btn-danger-outline popup-close">
-                                        <i class="mdi mdi-cancel"></i>
                                         <div class="fab-text"> Cancelar</div>
                                     </a>
                                 </div>
@@ -197,18 +189,43 @@
 
                 <!-- Scrollable page content -->
                 <div class="page-content bg-black txt-primary">
+                    <div class="block-title txt-primary">Aprendidas (2)</div>
+                    <div class="list media-list">
+                        <ul>
+                            <li>
+                                <a href="#" data-popup=".popup-resposta" class="item-link item-content popup-open">
+                                    <div class="item-inner">
+                                        <div class="item-title-row">
+                                            <div class="item-title fw-bold"><i class="mdi mdi-pencil"></i> Texto escrito
+                                                de
+                                                titulo</div>
+                                            <div class="item-after">
+                                                <span class="badge padding-left padding-right color-blue">ID: 1</span>
+                                            </div>
+                                        </div>
+                                        <div class="item-subtitle"><i class="mdi mdi-microphone"></i> Como a assistente
+                                            entendeu</div>
 
-                    <div id="semMemorias" class="display-none">
-                        <div class="block-title txt-primary">Nenhuma memória aprendida até o momento</div>
-                    </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="item-link item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title-row">
+                                            <div class="item-title fw-bold"><i class="mdi mdi-pencil"></i> Outra coisa
+                                                qualquer digitada</div>
+                                            <div class="item-after">
+                                                <span class="badge padding-left padding-right color-blue">ID: 2</span>
+                                            </div>
+                                        </div>
+                                        <div class="item-subtitle"><i class="mdi mdi-microphone"></i> Outra coisa
+                                            qualquer digitada</div>
 
-                    <div id="comMemorias" class="display-none">
-                        <div class="block-title txt-primary">Aprendidas (<b id="qtAprendidas"></b>)</div>
-                        <div class="list media-list">
-                            <ul id="listaPerguntas">
-
-                            </ul>
-                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
 
                 </div>
@@ -223,7 +240,7 @@
     <script type="text/javascript" src="js/router.js"></script>
     <script>
         var typed = new Typed('#resposta', {
-            strings: ['Isso é um teste de texto ^1000', ''],
+            strings: ['No que posso te ajudar? ^1000', ''],
             typeSpeed: 40,
             showCursor: false,
             onComplete: function (self) {
