@@ -13,4 +13,5 @@ Para visualizar a documentação do projeto
 
 <https://nandoti.github.io/ju-assistente-virtual/#/>
 
-![ju](https://user-images.githubusercontent.com/73204469/195904661-72707f7a-0236-4e52-8c40-4f9de7898cfa.jpg)
+
+![ju](https://user-images.githubusercontent.com/73204469/195910078-b45bc7f5-7e8a-4d39-a9ee-ddda6fbf2a1f.jpg)
