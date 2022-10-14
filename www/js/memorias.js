@@ -160,7 +160,7 @@ $('#salvarPergunta').on("click", function () {
 
 //CLICOU EM APAGAR MEMORIAS
 $("#apagarMemorias").on("click", function () {
-  app.dialog.confirm('Tem certeza que quer apagar as memórias?', '<strong>Confirmação</strong>',
+  app.dialog.confirm('Tem certeza que deseja apagar as memórias?', '<strong>Confirmação</strong>',
     function () {
       db.transaction(apagaBanco,
         function (err) {
