@@ -16,7 +16,7 @@ Para visualizar a documentação do projeto
 
 ### Tela inicial
 
-![ju](https://user-images.githubusercontent.com/73204469/195910078-b45bc7f5-7e8a-4d39-a9ee-ddda6fbf2a1f.jpg)
+![ju](https://user-images.githubusercontent.com/73204469/195917289-86d37411-f191-4859-84ce-d8adc996427f.jpg)
 
 ### Tela memórias
 
