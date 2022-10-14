@@ -1,0 +1,4 @@
+- Getting Started
+  - [Home](index.md)
+  - [Diagrama de Classe](pages/diagrama.md)
+  - [diagrama](pages/diagrama.md?id=exemplos-básicos)
