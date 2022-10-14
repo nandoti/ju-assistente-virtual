@@ -1,7 +1,9 @@
-## Projeto Final Estácio
+### Projeto Final Estácio
+
+## Necessário possuir node na máquina:
 
 ```
-Necessário possuir node na máquina: npm install
+npm install
 ```
 
 ```
