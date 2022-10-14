@@ -1,4 +1,3 @@
 - Getting Started
   - [Introdução](index.md)
-  - [Diagrama de Classe](pages/diagrama.md)
-  - [diagrama](pages/diagrama.md?id=exemplos-básicos)
+  - [Conceito do App](pages/diagrama.md?id=exemplos-básicos)
