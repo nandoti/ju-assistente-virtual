@@ -1,6 +1,10 @@
 ## Projeto Final Estácio
 
 ```
+Necessário possuir node na máquina: npm install
+```
+
+```
 Para rodar o projeto: cordova run android
 ```
 
