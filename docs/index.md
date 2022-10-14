@@ -5,7 +5,6 @@
 ```
 cordova create oh-ju-assistente br.com.oh.ju.assistente "Oh Ju" cordova platform add android
 ```
-
 ### framework usado
 
 https://framework7.io/
@@ -27,7 +26,6 @@ https://framework7.io/
 ```
 npm install
 ```
-
 ### Para instalar o app no seu celular
 ```
 cordova run android
