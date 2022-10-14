@@ -5,7 +5,6 @@
 ```
 npm install
 ```
-
 ### Para rodar o projeto:
 ```
 cordova run android
