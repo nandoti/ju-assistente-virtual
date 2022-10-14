@@ -1,6 +1,6 @@
 {
-  "name": "br.com.betha.assistente",
-  "displayName": "Betha Assistente",
+  "name": "br.com.ju.assistente",
+  "displayName": "Ju Assistente",
   "version": "1.0.0",
   "description": "A sample Apache Cordova application that responds to the deviceready event.",
   "main": "index.js",
