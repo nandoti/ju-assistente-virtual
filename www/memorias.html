@@ -31,7 +31,7 @@
                 <div class="navbar border-bottom-primary">
                     <div class="navbar-bg bg-black"></div>
                     <div class="navbar-inner">
-                        <a href="#" class="back left padding-left txt-primary"><i class="mdi mdi-arrow-left"></i> </a>
+                        <a href="/index/" class="left padding-left txt-primary"><i class="mdi mdi-arrow-left"></i> </a>
                         <div class="title txt-primary"><i class="mdi mdi-brain"></i> Memórias</div>
                         <a href="#" id="apagarMemorias" class="right padding-right txt-primary"><i
                                 class="mdi mdi-database"></i></a>
@@ -66,7 +66,7 @@
                                     <div class="title txt-primary">Nova Pergunta</div>
                                     <div class="right">
                                         <!-- Link to close popup -->
-                                        <a class="link popup-close"><i class="mdi mdi-close-circle"></i></a>
+                                        <a class="link popup-close cancel"><i class="mdi mdi-close-circle"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -98,11 +98,19 @@
                                     </ul>
                                 </div>
 
-                                <!-- FAB BUTTON LEFT-->
-                                <div class="fab fab-extended fab-left-bottom">
+                                <!-- FAB BUTTON LEFT SALVAR-->
+                                <div id="fabSalvar" class="fab fab-extended fab-left-bottom">
                                     <a href="#" id="salvarPergunta" class="btn-success-outline">
                                         <i class="mdi mdi-content-save"></i>
                                         <div class="fab-text"> Salvar</div>
+                                    </a>
+                                </div>
+
+                                <!-- FAB BUTTON LEFT ATUALIZAR-->
+                                <div id="fabAtualizar" class="fab fab-extended fab-left-bottom display-none">
+                                    <a href="#" id="atualizarPergunta" class="btn-warning-outline">
+                                        <i class="mdi mdi-refresh"></i>
+                                        <div class="fab-text"> Update</div>
                                     </a>
                                 </div>
 
@@ -116,9 +124,9 @@
 
                                 <!-- FAB BUTTON RIGHT-->
                                 <div class="fab fab-extended fab-right-bottom">
-                                    <a href="#" class="btn-danger-outline popup-close">
+                                    <a href="#" class="btn-danger-outline popup-close cancel">
                                         <i class="mdi mdi-cancel"></i>
-                                        <div class="fab-text"> Cancelar</div>
+                                        <div class="fab-text"> Cancel</div>
                                     </a>
                                 </div>
 
@@ -141,6 +149,9 @@
                                 </div>
                             </div>
                             <div class="page-content bg-black">
+                                <div class="block">
+                                    <span id="idDoItem" class="badge padding-left padding-right color-blue"></span>
+                                </div>
                                 <div class="list no-hairlines-md">
                                     <ul>
                                         <li class="item-content item-input">
@@ -148,7 +159,8 @@
                                                 <div class="item-title item-label txt-primary fw-bold">Resposta Escrita
                                                 </div>
                                                 <div class="item-input-wrap">
-                                                    <input class="input-custom border-bottom-primary" type="text" />
+                                                    <input id="input_rescrita"
+                                                        class="input-custom border-bottom-primary" type="text" />
                                                     <span class="input-clear-button"></span>
                                                 </div>
                                             </div>
@@ -158,7 +170,8 @@
                                                 <div class="item-title item-label txt-primary fw-bold">Resposta Falada
                                                 </div>
                                                 <div class="item-input-wrap">
-                                                    <input class="input-custom border-bottom-primary" type="text" />
+                                                    <input id="input_rfalada" class="input-custom border-bottom-primary"
+                                                        type="text" />
                                                     <span class="input-clear-button"></span>
                                                 </div>
                                             </div>
@@ -168,7 +181,7 @@
 
                                 <!-- FAB BUTTON LEFT-->
                                 <div class="fab fab-extended fab-left-bottom">
-                                    <a href="#" class="btn-warning-outline">
+                                    <a href="#" id="salvarRespostas" class="btn-warning-outline">
                                         <i class="mdi mdi-content-save"></i>
                                         <div class="fab-text"> Salvar</div>
                                     </a>
@@ -176,7 +189,7 @@
 
                                 <!-- FAB BUTTON CENTRALIZADO-->
                                 <div class="fab fab-extended fab-center-bottom">
-                                    <a href="#" class="btn-primary-outline">
+                                    <a href="#" id="BtnFalarResposta" class="btn-primary-outline">
 
                                         <div class="fab-text"> <i class="mdi mdi-bullhorn"></i></div>
                                     </a>
@@ -186,7 +199,7 @@
                                 <div class="fab fab-extended fab-right-bottom">
                                     <a href="#" class="btn-danger-outline popup-close">
                                         <i class="mdi mdi-cancel"></i>
-                                        <div class="fab-text"> Cancelar</div>
+                                        <div class="fab-text"> Cancel</div>
                                     </a>
                                 </div>
 
