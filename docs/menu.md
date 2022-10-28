@@ -1,3 +1,4 @@
 - Getting Started
   - [Introdução](index.md)
   - [Conceito do App](pages/diagrama.md?id=exemplos-básicos)
+  -[Telas defuncionamento](pages/telaimagens.md)
