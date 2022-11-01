@@ -1,6 +1,6 @@
 ### Tela inicial
 
-![ju](https://user-images.githubusercontent.com/73204469/195917289-86d37411-f191-4859-84ce-d8adc996427f.jpg)
+![inicio](https://user-images.githubusercontent.com/73204469/199310413-ba6e3002-7dde-48a3-8fe7-19ace21babaa.jpg)
 
 ### Tela memórias
 
