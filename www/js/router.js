@@ -10,6 +10,9 @@ var app = new Framework7({
   panel: {
     swipe: true,
   },
+  touch: {
+    tapHold: true,
+  },
   // Add routes
   routes: [
     {
