@@ -2,4 +2,4 @@
   - [Introdução](index.md)
   - [Conceito do App](pages/diagrama.md?id=exemplos-básicos)
   - [Funcionamento](pages/telaimagens.md)
-  - [bando de dados](pages/db.md?id=)
+  - [bando de dados](pages/db.md)
