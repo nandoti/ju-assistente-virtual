@@ -18,11 +18,14 @@ var searchbar = app.searchbar.create({
  ###  BANCO DE DADOS LOCAL WEBSQL
   ### CRIA O BANCO SE NÃO EXISTIR OU ABRE O BANCO SE EXISTIR
   
+  ```
   var db = window.openDatabase("Banco","1.0","Banco",25000000);
+```
 
 ### SOLITIAMOS UMA TRANSAÇÃO PARA CRIAR UMA TABELA NO BANCO
 
   db.transaction(criarTabela,
+  
 ### callback de Erro
 
     function(err){
