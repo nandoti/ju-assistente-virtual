@@ -2,8 +2,7 @@
 
 ### INICIALIZAÇÃO DO SEARCHBAR
 
-
-// var searchbar = app.searchbar.create({
+ var searchbar = app.searchbar.create({
     el: '.searchbar',
     searchContainer: '.list',
     searchIn: '.item-title',
@@ -14,5 +13,5 @@
     }
   });
   
-  //
+
   
