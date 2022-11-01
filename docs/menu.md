@@ -1,4 +1,4 @@
-- Getting Started
+Menu
   - [Introdução](index.md)
   - [Conceito do App](pages/diagrama.md?id=exemplos-básicos)
   - [Funcionamento](pages/telaimagens.md)
