@@ -2,6 +2,7 @@
 
 ### INICIALIZAÇÃO DO SEARCHBAR
 
+```
 var searchbar = app.searchbar.create({
     el: '.searchbar',
     searchContainer: '.list',
@@ -12,6 +13,7 @@ var searchbar = app.searchbar.create({
       }
     }
   });
+  ```
 
  ###  BANCO DE DADOS LOCAL WEBSQL
   ### CRIA O BANCO SE NÃO EXISTIR OU ABRE O BANCO SE EXISTIR
