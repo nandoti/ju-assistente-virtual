@@ -1,4 +1,4 @@
-### Asistente Virtual 
+### Assistente Virtual 
 
 Este app foi criado com intuito de ajudar minha mãe nas tarefas simples do dia a dia, como lembrar as datas de vencimento das contas, datas de seus exames e etc. Conversando com amigos na área, surgiu a ideia de utilizar o framework7 pela sua facilidade e integração com algumas bibliotecas. Aqui você irá encontrar todo material  utilizado para desenvolvimento do app.
 
