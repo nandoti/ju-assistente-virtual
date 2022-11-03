@@ -1,6 +1,6 @@
-## Funcionamento do banco de dados
+ #  BANCO DE DADOS LOCAL WEBSQL
 
-# INICIALIZAÇÃO DO SEARCHBAR
+### INICIALIZAÇÃO DO SEARCHBAR
 
 ```
 var searchbar = app.searchbar.create({
@@ -13,17 +13,15 @@ var searchbar = app.searchbar.create({
       }
     }
   });
-  ```
-
- #  BANCO DE DADOS LOCAL WEBSQL
- 
-  # CRIA O BANCO SE NÃO EXISTIR OU ABRE O BANCO SE EXISTIR
+  ``` 
   
-  ```
+  ### CRIA O BANCO SE NÃO EXISTIR OU ABRE O BANCO SE EXISTIR
+  
+```
   var db = window.openDatabase("Banco","1.0","Banco",25000000);
 ```
 
-# SOLITIAMOS UMA TRANSAÇÃO PARA CRIAR UMA TABELA NO BANCO
+### SOLITIAMOS UMA TRANSAÇÃO PARA CRIAR UMA TABELA NO BANCO
 
 ```
   db.transaction(criarTabela,
@@ -36,7 +34,7 @@ var searchbar = app.searchbar.create({
     });
 ```
 
-# FUNÇÃO RESPONSÁVEL POR CRIAR A TABELA NO NOSSO BANCO
+### FUNÇÃO RESPONSÁVEL POR CRIAR A TABELA NO NOSSO BANCO
 
 ```
   function criarTabela(tx){
@@ -44,7 +42,7 @@ var searchbar = app.searchbar.create({
   }
 ```
 
-# FUNÇÃO PARA LISTAR OS ITENS DO BANCO
+### FUNÇÃO PARA LISTAR OS ITENS DO BANCO
 
 ```
   function listarMemorias(){
@@ -58,7 +56,7 @@ var searchbar = app.searchbar.create({
   
   ```
 
-# FUNÇÃO PARA SELECIONAR TUDO
+### FUNÇÃO PARA SELECIONAR TUDO
 
 ```
   function selecionarTudo(tx){
@@ -77,14 +75,14 @@ var searchbar = app.searchbar.create({
       }else{
 ```
 
-# MOSTRAR COM MEMORIAS A LISTA
+### MOSTRAR COM MEMORIAS A LISTA
 
 ```
         $("#comMemorias").removeClass('display-none');
         $("#semMemorias").addClass('display-none');
 ```
 
-# ALIMENTAR O CAMPO QUANTAS APRENDIDAS
+### ALIMENTAR O CAMPO QUANTAS APRENDIDAS
 
 ```
         $("#qtAprendidas").html(linhas);
