@@ -1,6 +1,6 @@
-### Funcionamento do banco de dados
+## Funcionamento do banco de dados
 
-## INICIALIZAÇÃO DO SEARCHBAR
+### INICIALIZAÇÃO DO SEARCHBAR
 
 ```
 var searchbar = app.searchbar.create({
@@ -15,16 +15,17 @@ var searchbar = app.searchbar.create({
   });
   ```
 
- ##  BANCO DE DADOS LOCAL WEBSQL
+ ###  BANCO DE DADOS LOCAL WEBSQL
  
-  ## CRIA O BANCO SE NÃO EXISTIR OU ABRE O BANCO SE EXISTIR
+  ### CRIA O BANCO SE NÃO EXISTIR OU ABRE O BANCO SE EXISTIR
   
   ```
   var db = window.openDatabase("Banco","1.0","Banco",25000000);
 ```
 
-## SOLITIAMOS UMA TRANSAÇÃO PARA CRIAR UMA TABELA NO BANCO
+### SOLITIAMOS UMA TRANSAÇÃO PARA CRIAR UMA TABELA NO BANCO
 
+```
   db.transaction(criarTabela,
   
     function(err){
@@ -33,15 +34,19 @@ var searchbar = app.searchbar.create({
     },function(){
       console.log('Sucesso ao realizar transação Criar Tabela');
     });
+```
 
-## FUNÇÃO RESPONSÁVEL POR CRIAR A TABELA NO NOSSO BANCO
+### FUNÇÃO RESPONSÁVEL POR CRIAR A TABELA NO NOSSO BANCO
 
+```
   function criarTabela(tx){
     tx.executeSql("CREATE TABLE IF NOT EXISTS memorias (id INTEGER primary key,p_escrita varchar(255),p_falada varchar(255), r_escrita varchar(255), r_falada varchar(255))");
   }
+```
 
-## FUNÇÃO PARA LISTAR OS ITENS DO BANCO
+### FUNÇÃO PARA LISTAR OS ITENS DO BANCO
 
+```
   function listarMemorias(){
     db.transaction(selecionarTudo,
       function(err){
@@ -50,47 +55,64 @@ var searchbar = app.searchbar.create({
         console.log('Sucesso ao realizar Transação Selecionar Tudo!');
       })
   }
+  
+  ```
 
 ## FUNÇÃO PARA SELECIONAR TUDO
 
+```
   function selecionarTudo(tx){
     tx.executeSql('SELECT * FROM memorias ORDER BY id',[],
     function(tx, dados){
       //console.log(dados);
       var linhas = dados.rows.length;
+```
 
-## SE AS LINHAS FOREM MAIOR QUE 0
+### SE AS LINHAS FOREM MAIOR QUE 0
+
+```
       if(linhas==0){
         $("#comMemorias").addClass('display-none');
         $("#semMemorias").removeClass('display-none');
       }else{
+```
 
-## MOSTRAR COM MEMORIAS A LISTA
+### MOSTRAR COM MEMORIAS A LISTA
 
+```
         $("#comMemorias").removeClass('display-none');
         $("#semMemorias").addClass('display-none');
+```
 
-## ALIMENTAR O CAMPO QUANTAS APRENDIDAS
+### ALIMENTAR O CAMPO QUANTAS APRENDIDAS
 
+```
         $("#qtAprendidas").html(linhas);
         $("#listaPerguntas").empty();
 
         var banco = [];
+```
 
-## PERCORRER TODAS AS LINHAS DO BANCO
+### PERCORRER TODAS AS LINHAS DO BANCO
 
+```
         for(i=0; i< linhas; i++){
+```
 
-## ADICIONAR DENTRO DO ARRAY BANCO OS DADOS
+### ADICIONAR DENTRO DO ARRAY BANCO OS DADOS
+
+```
           banco.push({
               p_escrita: dados.rows.item(i).p_escrita,
               p_falada: dados.rows.item(i).p_falada,
               r_escrita: dados.rows.item(i).r_escrita,
               r_falada: dados.rows.item(i).r_falada,
           })
+```
 
-## SALVAR TODO O BANCO NO LOCALSTORAGE
+### SALVAR TODO O BANCO NO LOCALSTORAGE
 
+```
           localStorage.setItem('banco',JSON.stringify(banco));
 
           $("#listaPerguntas").append(`<li>
@@ -108,30 +130,42 @@ var searchbar = app.searchbar.create({
           </a>
       </li>`)
         }
+```
 
 ## CLICOU NUM ITEM DA LISTA
 
+```
         $(".item-link").on('click', function(){
+```
 
 ## ERRAR OS CAMPINHOS INPUT
+
+```
           $("#input_rescrita").val('');
           $("#input_rfalada").val(''); 
+```
 
 ## RECUPERAR INFORMAÇÕES DESTE ITEM DA LISTA
 
+```
           var idItem = $(this).attr('data-id');
           localStorage.setItem('idItem',idItem);
           var itemPerguntaEscrita = $(this).attr('data-pescrita');
           var itemPerguntaFalada = $(this).attr('data-pfalada');
           var itemRespostaEscrita = $(this).attr('data-rescrita');
           var itemRespostaFalada = $(this).attr('data-rfalada');
+```
 
 ## ALIMENTAR ID DO POPUP RESPOSTA
 
+```
+
           $("#idDoItem").html('ID: '+idItem);
+```
 
 ## SE A RESPOSTA NÃO FOR NULA ALIMENTAR O CAMPO
 
+```
           if(itemRespostaEscrita!==null && itemRespostaEscrita!=="null"){
             $("#input_rescrita").val(itemRespostaEscrita);
           }
@@ -139,19 +173,25 @@ var searchbar = app.searchbar.create({
           if(itemRespostaFalada!==null && itemRespostaFalada!=="null"){
             $("#input_rfalada").val(itemRespostaFalada);
           }
+```
 
 ## FOCAR NO CAMPINHO INPUT RESCRITA
 
+```
           $("#input_rescrita").focus();
 
         });
+```
 
 ## CLICOU E SEGUROU O CLIQUE
 
+```
         $(".item-link").on('taphold', function(){
-         
+```
+        
 ## RECUPERAR INFORMAÇÕES DESTE ITEM DA LISTA
 
+```
           var idItem = $(this).attr('data-id');
           localStorage.setItem('idItem',idItem);
           var itemPerguntaEscrita = $(this).attr('data-pescrita');
@@ -167,21 +207,31 @@ var searchbar = app.searchbar.create({
                 text: '<i class="mdi mdi-refresh"></i> Atualizar pergunta',
                 color: 'blue',
                 onClick: function(){
+ ```               
 
 ## DESAPARECER O BOTAO SALVAR
 
+```
                   $("#fabSalvar").addClass('display-none');
+                  
+```
+
 ## APARECER O BOTAO ATUALIZAR
 
+```
                   $("#fabAtualizar").removeClass('display-none');
+```
 
 ## ALIMENTAR OS CAMPOS DO POPUP
 
+```
                   $("#perguntaEscrita").val(itemPerguntaEscrita);
                   $("#perguntaEntendida").val(itemPerguntaFalada);
+```
 
 ## ABRIR O POPUP DE PERGUNTA
 
+```
                   app.popup.open('.popup-pergunta');
 
                 }
@@ -208,12 +258,15 @@ var searchbar = app.searchbar.create({
           
 
         });
+```
 
 ## SAIU DO FOCO DO CAMPO INPUT R ESCRITA
 
+```
         $("#input_rescrita").on('blur', function(){
           $("#input_rfalada").val($("#input_rescrita").val());
         });
+```
 
 ## CLICOU NO BOTÃO PARA ASSISTENTE FALAR
 
