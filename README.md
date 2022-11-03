@@ -1,5 +1,7 @@
 ## Projeto Final Estácio
 
+Esse app foi criado com intuito de ajudar minha mãe nas tarefas simples do dia a dia, como lembrar as datas de vencimento das contas. 
+
 ### Necessário possuir node na máquina:
 
 ```
