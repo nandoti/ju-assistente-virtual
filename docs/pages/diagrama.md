@@ -2,8 +2,6 @@
 ## Funcionamento do App
 
 
-Aqui você irá encontrar os diagramas de funcionamento do app.
-
 > Diagrama uml
 
 
