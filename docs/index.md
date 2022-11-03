@@ -1,4 +1,4 @@
-# Assistente Virtual Ju
+# Material utilizado para desenvolver o app
 
 ### Utilizado para criar o projeto
 
