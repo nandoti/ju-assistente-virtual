@@ -2,6 +2,10 @@
 
 Esse app foi criado com intuito de ajudar minha mãe nas tarefas simples do dia a dia, como lembrar as datas de vencimento das contas. 
 
+### Para visualizar a documentação do projeto
+
+<https://nandoti.github.io/ju-assistente-virtual/#/>
+
 ### Necessário possuir node na máquina:
 
 ```
@@ -11,10 +15,6 @@ npm install
 ```
 cordova run android
 ```
-Para visualizar a documentação do projeto
-
-<https://nandoti.github.io/ju-assistente-virtual/#/>
-
 
 ### Tela inicial
 
