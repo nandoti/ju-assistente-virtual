@@ -132,20 +132,20 @@ var searchbar = app.searchbar.create({
         }
 ```
 
-## CLICOU NUM ITEM DA LISTA
+### CLICOU NUM ITEM DA LISTA
 
 ```
         $(".item-link").on('click', function(){
 ```
 
-## ERRAR OS CAMPINHOS INPUT
+### ERRAR OS CAMPINHOS INPUT
 
 ```
           $("#input_rescrita").val('');
           $("#input_rfalada").val(''); 
 ```
 
-## RECUPERAR INFORMAÇÕES DESTE ITEM DA LISTA
+### RECUPERAR INFORMAÇÕES DESTE ITEM DA LISTA
 
 ```
           var idItem = $(this).attr('data-id');
@@ -156,14 +156,14 @@ var searchbar = app.searchbar.create({
           var itemRespostaFalada = $(this).attr('data-rfalada');
 ```
 
-## ALIMENTAR ID DO POPUP RESPOSTA
+### ALIMENTAR ID DO POPUP RESPOSTA
 
 ```
 
           $("#idDoItem").html('ID: '+idItem);
 ```
 
-## SE A RESPOSTA NÃO FOR NULA ALIMENTAR O CAMPO
+### SE A RESPOSTA NÃO FOR NULA ALIMENTAR O CAMPO
 
 ```
           if(itemRespostaEscrita!==null && itemRespostaEscrita!=="null"){
@@ -175,7 +175,7 @@ var searchbar = app.searchbar.create({
           }
 ```
 
-## FOCAR NO CAMPINHO INPUT RESCRITA
+### FOCAR NO CAMPINHO INPUT RESCRITA
 
 ```
           $("#input_rescrita").focus();
@@ -183,13 +183,13 @@ var searchbar = app.searchbar.create({
         });
 ```
 
-## CLICOU E SEGUROU O CLIQUE
+### CLICOU E SEGUROU O CLIQUE
 
 ```
         $(".item-link").on('taphold', function(){
 ```
         
-## RECUPERAR INFORMAÇÕES DESTE ITEM DA LISTA
+### RECUPERAR INFORMAÇÕES DESTE ITEM DA LISTA
 
 ```
           var idItem = $(this).attr('data-id');
@@ -209,27 +209,27 @@ var searchbar = app.searchbar.create({
                 onClick: function(){
  ```               
 
-## DESAPARECER O BOTAO SALVAR
+### DESAPARECER O BOTAO SALVAR
 
 ```
                   $("#fabSalvar").addClass('display-none');
                   
 ```
 
-## APARECER O BOTAO ATUALIZAR
+### APARECER O BOTAO ATUALIZAR
 
 ```
                   $("#fabAtualizar").removeClass('display-none');
 ```
 
-## ALIMENTAR OS CAMPOS DO POPUP
+### ALIMENTAR OS CAMPOS DO POPUP
 
 ```
                   $("#perguntaEscrita").val(itemPerguntaEscrita);
                   $("#perguntaEntendida").val(itemPerguntaFalada);
 ```
 
-## ABRIR O POPUP DE PERGUNTA
+### ABRIR O POPUP DE PERGUNTA
 
 ```
                   app.popup.open('.popup-pergunta');
@@ -260,7 +260,7 @@ var searchbar = app.searchbar.create({
         });
 ```
 
-## SAIU DO FOCO DO CAMPO INPUT R ESCRITA
+### SAIU DO FOCO DO CAMPO INPUT R ESCRITA
 
 ```
         $("#input_rescrita").on('blur', function(){
@@ -268,11 +268,15 @@ var searchbar = app.searchbar.create({
         });
 ```
 
-## CLICOU NO BOTÃO PARA ASSISTENTE FALAR
+### CLICOU NO BOTÃO PARA ASSISTENTE FALAR
 
+```
         $("#BtnFalarResposta").on('click', function(){
-## RECUPERAR O VALOR DO INPUT R FALADA
+ ```
+ 
+### RECUPERAR O VALOR DO INPUT R FALADA
 
+```
           var fala =  $("#input_rfalada").val();
           
           TTS.speak({
@@ -284,25 +288,36 @@ var searchbar = app.searchbar.create({
             }, function (erro) {
                 app.dialog.alert('Houve um erro: '+erro);
             });
-
         });
+```
 
-## CLICOU NO BOTÃO PARA SALVAR AS RESPOSTAS
+### CLICOU NO BOTÃO PARA SALVAR AS RESPOSTAS
 
+```
         $("#salvarRespostas").on('click', function(){
+```
 
-## RECUPERA O ID
+### RECUPERA O ID
 
-          var id =  localStorage.getItem('idItem');          
-## RECUPERAR O VALOR DO INPUT R FALADA
+```
+          var id =  localStorage.getItem('idItem');  
+```
 
+### RECUPERAR O VALOR DO INPUT R FALADA
+
+```
           var escrita =  $("#input_rescrita").val();
-## RECUPERAR O VALOR DO INPUT R FALADA
+```
 
+### RECUPERAR O VALOR DO INPUT R FALADA
+
+```
           var falada =  $("#input_rfalada").val().toLowerCase(); 
-          
-## INICIAR TRANSAÇÃO COM BANCO DE DADOS
+ ```
+ 
+### INICIAR TRANSAÇÃO COM BANCO DE DADOS
 
+```
           db.transaction(atualizarTabela,
             function(err){
               app.dialog.alert('Erro ao atualizar tabela: '+err);
@@ -313,22 +328,30 @@ var searchbar = app.searchbar.create({
             function atualizarTabela(tx){
               tx.executeSql("UPDATE memorias SET r_escrita='"+escrita+"', r_falada='"+falada+"' WHERE id='"+id+"'  ");
             }
-            
-## TOST PARA DAR AVISO DE QUE SALVOU
+ ```
+ 
+### TOST PARA DAR AVISO DE QUE SALVOU
 
+```
             tostSalvar();
+            
+```
+### ZERAR OS CAMPINHOS INPUT
 
-## ZERAR OS CAMPINHOS INPUT
-
+```
             $("#input_rescrita").val('');
             $("#input_rfalada").val(''); 
+```
 
-## FECHAR O POPUP DA RESPOSTA
+### FECHAR O POPUP DA RESPOSTA
 
+```
             app.popup.close('.popup-resposta');
+```
 
-## ATUALIZAR A PÁGINA
+### ATUALIZAR A PÁGINA
 
+```
             app.views.main.router.refreshPage();
         });
       }
@@ -338,10 +361,13 @@ var searchbar = app.searchbar.create({
     })
   }
   listarMemorias();
+```
 
-## CLICOU EM GRAVAR PERGUNTA
+### CLICOU EM GRAVAR PERGUNTA
 
+```
   $("#gravarPergunta").on("click", function(){
+```
 
     let options = {
       language: "pt-BR",          
@@ -349,8 +375,9 @@ var searchbar = app.searchbar.create({
       showPartial: true 
     }
     
-## COMEÇOU A "ESCUTAR"
+### COMEÇOU A "ESCUTAR"
 
+```
     window.plugins.speechRecognition.startListening(
     
       function(dados){
@@ -363,18 +390,24 @@ var searchbar = app.searchbar.create({
          app.dialog.alert('Houve um erro: '+erro); 
       }, options)
   })
+```
 
-## CLICOU EM SALVAR PERGUNTA
+### CLICOU EM SALVAR PERGUNTA
 
+```
   $('#salvarPergunta').on("click",function(){
+```
 
-## RECUPERAR OS VALORES DOS CAMPOS INPUT
+### RECUPERAR OS VALORES DOS CAMPOS INPUT
 
+```
     var pergunta_escrita = $("#perguntaEscrita").val();
     var pergunta_falada = $("#perguntaEntendida").val().toLowerCase();
+```
 
-## VALIDAÇÃO PARA OS CAMPOS NÃO SEREM VAZIOS
+### VALIDAÇÃO PARA OS CAMPOS NÃO SEREM VAZIOS
 
+```
     if(pergunta_escrita=="" || pergunta_falada==""){
       app.dialog.alert('Por favor, preencha todos os campos!');
     }else{
@@ -384,22 +417,28 @@ var searchbar = app.searchbar.create({
         }, 
         function(){
           console.log('Sucesso ao realizar a transação de Inserir');
-        
+```
+
 ## TOAST PARA INFORMAR O USUÁRIO DE QUE FOI SALVO COM SUCESSO
 
           tostSalvar();
 
-## ESVAZIAR OS CAMPOS
+### ESVAZIAR OS CAMPOS
 
+```
         $("#perguntaEscrita").val("");
         $("#perguntaEntendida").val("");
+```
 
-## FOCAR NO PERGUNTA ESCRITA
+### FOCAR NO PERGUNTA ESCRITA
 
+```
         $("#perguntaEscrita").focus();
-         
-## ATUALIZAR A PÁGINA
+   ```
+   
+### ATUALIZAR A PÁGINA
 
+```
         app.views.main.router.refreshPage();
 
         })
@@ -410,9 +449,11 @@ var searchbar = app.searchbar.create({
     }
 
   })
+```
 
-## CLICOU EM APAGAR MEMORIAS
+### CLICOU EM APAGAR MEMORIAS
 
+```
   $("#apagarMemorias").on("click",function(){
       app.dialog.confirm('Tem certeza que quer apagar as memórias?','<strong>Confirmação</strong>',
       function(){
@@ -427,9 +468,11 @@ var searchbar = app.searchbar.create({
           function apagaBanco(tx){
             tx.executeSql("DROP TABLE memorias",[],
             function(){
-            
-## APAGAR O BANCO DO LOCALSTORAGE
+  ```
+  
+### APAGAR O BANCO DO LOCALSTORAGE
 
+```
               localStorage.removeItem('banco');
               app.dialog.alert('Nada mais faz sentido...','<strong>Memórias Apagadas</strong>');
             },
@@ -455,25 +498,36 @@ function deletar(tx){
   var id = localStorage.getItem('idItem');
   tx.executeSql('DELETE FROM memorias WHERE id="'+id+'"');
 }
+```
 
-## CLICOU PARA ATUALIZAR A PERGUNTA
+### CLICOU PARA ATUALIZAR A PERGUNTA
 
+```
 $("#atualizarPergunta").on('click', function(){
+```
 
 ### RECUPERA O ID
 
+```
   var id =  localStorage.getItem('idItem');
-  
-## RECUPERAR O VALOR DO INPUT R FALADA
+ 
+ ```
+ 
+### RECUPERAR O VALOR DO INPUT R FALADA
 
+```
   var perguntaEscrita =  $("#perguntaEscrita").val();
-  
-## RECUPERAR O VALOR DO INPUT R FALADA
+```
 
+### RECUPERAR O VALOR DO INPUT R FALADA
+
+```
   var perguntaFalada =  $("#perguntaEntendida").val().toLowerCase();
-  
-## INICIAR TRANSAÇÃO COM BANCO DE DADOS
+```
 
+### INICIAR TRANSAÇÃO COM BANCO DE DADOS
+
+```
   db.transaction(atualizarTabelaPergunta,
     function(err){
       app.dialog.alert('Erro ao atualizar tabela: '+err);
@@ -484,39 +538,56 @@ $("#atualizarPergunta").on('click', function(){
     function atualizarTabelaPergunta(tx){
       tx.executeSql("UPDATE memorias SET p_escrita='"+perguntaEscrita+"', p_falada='"+perguntaFalada+"' WHERE id='"+id+"'  ");
     }
-    
-## TOST PARA DAR AVISO DE QUE SALVOU
+  ```
+  
+### TOST PARA DAR AVISO DE QUE SALVOU
 
+```
     tostSalvar();
+```
 
-## ZERAR OS CAMPINHOS INPUT
+### ZERAR OS CAMPINHOS INPUT
 
+```
     $("#perguntaEscrita").val('');
     $("#perguntaEntendida").val(''); 
+```
 
-## FECHAR O POPUP DA RESPOSTA
+### FECHAR O POPUP DA RESPOSTA
+
+```
     app.popup.close('.popup-pergunta');
+```
 
-## ATUALIZAR A PÁGINA
+### ATUALIZAR A PÁGINA
+
+```
     app.views.main.router.refreshPage();
-
 });
 
 $(".cancel").on('click',function(){
 
-## FECHAR O POPUP DA RESPOSTA
+```
+### FECHAR O POPUP DA RESPOSTA
 
+```
     app.popup.close('.popup-pergunta');
 
-## TUALIZAR A PÁGINA
+```
 
+### TUALIZAR A PÁGINA
+
+```
     app.views.main.router.refreshPage();
 });
 
 function tostSalvar(){
 
+```
+
 ## TOAST DE SALVAR
 
+```
   toastSalvar = app.toast.create({
     icon: '<i class="mdi mdi-content-save"></i>',
     text: 'Salvo',
@@ -525,3 +596,4 @@ function tostSalvar(){
     });
     toastSalvar.open();
 }
+```
