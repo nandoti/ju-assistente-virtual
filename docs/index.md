@@ -35,7 +35,7 @@ Para entender a fala e texto, foi utilizando os seguintes plugins:
 cordova create oh-ju-assistente br.com.oh.ju.assistente "nome do projeto" cordova platform add android
 ```
 
-## Necessário NodeJs
+### Necessário NodeJs
 
 ```
 npm install
