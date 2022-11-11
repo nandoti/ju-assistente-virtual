@@ -12,11 +12,6 @@ https://cordova.apache.org/
 
 ```
 
-### Comando para criar o projeto
-
-```
-cordova create oh-ju-assistente br.com.oh.ju.assistente "Oh Ju" cordova platform add android
-```
 ### framework usado
 
 https://framework7.io/
@@ -33,6 +28,12 @@ Para entender a fala e texto, foi utilizando os seguintes plugins:
 <https://mattboldt.com/demos/typed-js/>
 
 <https://materialdesignicons.com>
+
+### Comando para criar o projeto
+
+```
+cordova create oh-ju-assistente br.com.oh.ju.assistente "nome do projeto" cordova platform add android
+```
 
 ## Necessário NodeJs
 
