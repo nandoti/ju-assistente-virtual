@@ -21,7 +21,8 @@ cordova create oh-ju-assistente br.com.oh.ju.assistente "Oh Ju" cordova platform
 
 https://framework7.io/
 
-### Para entender a fala e texto, foi utilizando os seguintes plugins:
+
+Para entender a fala e texto, foi utilizando os seguintes plugins:
 
 ### Speech Recognition e Text To Speech
 
